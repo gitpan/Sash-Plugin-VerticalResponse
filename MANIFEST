@@ -1,0 +1,10 @@
+MANIFEST
+README
+Makefile
+Changes
+lib/VerticalResponse/Command.pm
+lib/VerticalResponse/Cursor.pm
+lib/VerticalResponse.pm
+Makefile.PL
+registry/verticalresponse.pl
+META.yml                                 Module meta-data (added by MakeMaker)
