@@ -2,7 +2,7 @@ Sash::Plugin::VerticalResponse version 1.00
 ===========================================
 
 This is a plugin for the Sash data source.  It allows for command line access to
-the VerticalResponse.com API (http://www.verticalresponse.com/services/api).  
+the VerticalResponse.com API (http://www.verticalresponse.com/api).  
 
 INSTALLATION
 
@@ -16,7 +16,7 @@ DEPENDENCIES
 
 This module requires these other modules which are also readily available on CPAN:
 
-Sash 1.00
+Sash 1.01
 
 DOCUMENTATION
 

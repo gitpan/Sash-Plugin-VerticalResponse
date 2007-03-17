@@ -3,7 +3,7 @@ package Sash::Plugin::VerticalResponse;
 use strict;
 use warnings;
 
-our $VERSION = '1.0';
+our $VERSION = '1.01';
 
 use Carp;
 
@@ -47,6 +47,10 @@ sub connect {
 
 Sash::Plugin::VerticalResponse
 
+=head1 VERSION
+
+This documentation refers to version 1.01.
+
 =head1 SYNOPSIS
 
     sash> set output tabular
@@ -66,7 +70,7 @@ Sash::Plugin::VerticalResponse
 =head1 DESCRIPTION
 
 This is a plugin for the amazing sash tool that provides a command line interface
-to the VerticalResponse API L<http://www.verticalresponse.com/services/api>.  It can be used
+to the VerticalResponse API L<http://www.verticalresponse.com/api>.  It can be used
 to invoke methods available in the API as well as a development tool to write and debug
 applications written in perl.
 
@@ -77,12 +81,12 @@ B<NOTE>: VRAPI will be used in this documentation to refer to the VerticalRespon
 There are a few ways to instruct sash to connect to the VRAPI.  The simplest method
 is to define the L<ENVIRONMENT VARIABLES> listed in the section below.  Then you
 can simply type sash at the command prompt and get started.  The other option is
-to use the traditional command line with the available L<FLAGS> illustrated below:.
+to use the traditional command line with the available L</FLAGS> illustrated below:.
 
     wes:~> sash -u wes@verticalresponse.com -e https://api.verticalresponse.com/1.0/VRAPI
     password:
     
-    Certificate File: /home/wes/etc/wesverticalresponsecom-ee.p12
+    Certificate File: /a/secret/igotacertificatefile.p12
     
     Passphrase:
     Connection to https://api.verticalresponse.com/1.0/VRAPI established!
@@ -104,7 +108,7 @@ command line flags.
 B<SASH_USERNAME>
 
 Your VR account username.
-    
+
 =item *
 
 B<SASH_PASSWORD>
@@ -178,7 +182,7 @@ B<-i, -interactive>
 
 If you have run the plugin with the B<-f> flag then when you specify this flag
 you are given a I<sash> command prompt with the last result of the executed
-script available to you.  See the L<Predefined Variables> section in L<PROGRAMMING>
+script available to you.  See the L<Predefined Variables> section in L</PROGRAMMING>
 for more information on taking advantage of this built in feature.
 
 =back
@@ -192,7 +196,7 @@ VRAPI.  You enter a I<command> and it displays a result set.
 
 =head2 show
 
-This command behaves like a standard L<sash> command.
+This command behaves like a standard I<sash> command.
 
 =head3 methods
     
@@ -257,7 +261,7 @@ quotes are valid.  The example below a call to create a list using I<sash>:
 
 You can also use data structures as a valid I<value> in your hash.  The following
 example shows how to use anonymous arrays as well and how to code the
-L<NVDictionary|http://api.verticalresponse.com/wsdl/1.0/documentation.html>
+I<NVDictionary> (L<http://api.verticalresponse.com/wsdl/1.0/documentation.html>)
 datatype:
 
     sash> addListMember { list_member => { \
@@ -322,7 +326,7 @@ below:
     
     1 rows in set (0.21 sec)
 
-See more in the L<PROGRAMMING> setion of this document for more information regarding
+See more in the L</PROGRAMMING> setion of this document for more information regarding
 these features
 
 =head2 Simple Syntax
@@ -358,7 +362,7 @@ the arguments are ( brackets indicate optional arguments ie [, field1, ...]:
 
 =back
 
-=head1 OUTPUT FORMAT
+=head1 OUTPUT FORMATS
 
 There are three different output formats that are available to configure the way
 the result of a command is interpreted.
@@ -410,7 +414,7 @@ instead and get:
 This is an interesting option in that instead of trying to format the data for
 output it instead just returns the perl code result.  I<Sash> is written in Perl
 so you can script this plugin to prototype your application or test a piece of
-code that is not working.  See the L<PROGRAMMING> section of this document for more
+code that is not working.  See the L</PROGRAMMING> section of this document for more
 information on how to use this option to its fullest extent.
 
 =head1 PROGRAMMING
@@ -528,7 +532,7 @@ command invocation looks and behaves just like it would in Perl:
     sash> $user = $client->getUserByEmailAddress( { email_address => 'wesley_bailey@yahoo.com' } )
 
 To convince yourself that the variable C<$user> actually has the correct values see the
-L<Debugging> section below.
+L</DEBUGGING> section below.
 
 =head3 C<$result>
 
@@ -602,10 +606,21 @@ L<VR::API::Partner>
 
 =head1 COPYRIGHT
 
-Copyright (C) 2007, Wesley H. Bailey, VerticalResponse Inc.
+Copyright (C) 2007, Wes Bailey, VerticalResponse Inc.
 
-This program is free software.  You may copy or redistribute it under the same
-terms as Perl itself.
+This sash plugin is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This sash plugin is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 =cut
 
